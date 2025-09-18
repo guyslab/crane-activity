@@ -59,6 +59,8 @@ class DailyReport extends HTMLElement {
                     <stat-card label="Utilized Hours" value="${this.reportData.daily_stats.utilized_hours}"></stat-card>
                 </div>
                 
+                <top-half-doughnut title="Utilization" threshold="80" value="${this.reportData.daily_stats.utilization_percent}"></top-half-doughnut>
+                
                 <div class="breakdown">
                     <div class="breakdown-grid">
                         <stat-card label="Moving with Load" value="${this.reportData.breakdown.moving_with_load.duration.padStart(5, '0')}"></stat-card>
