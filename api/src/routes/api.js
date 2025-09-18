@@ -1,6 +1,6 @@
 const express = require('express');
 const { getDailyReport } = require('../controllers/reportController');
-const { getAvailableDates } = require('../controllers/dateController');
+const { getAvailableDates } = require('../controllers/scopeController');
 const { getHealth } = require('../controllers/healthController');
 
 const router = express.Router();
