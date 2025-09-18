@@ -79,10 +79,10 @@ class DailyReport extends HTMLElement {
                 
                 <div class="breakdown">
                     <div class="breakdown-grid">
-                        <stat-card label="Moving with Load" value="${this.reportData.breakdown.moving_with_load.duration.padStart(5, '0')}"></stat-card>
-                        <stat-card label="Moving without Load" value="${this.reportData.breakdown.moving_without_load.duration.padStart(5, '0')}"></stat-card>
-                        <stat-card label="Idle with Load" value="${this.reportData.breakdown.idle_with_load.duration.padStart(5, '0')}"></stat-card>
-                        <stat-card label="Idle without Load" value="${this.reportData.breakdown.idle_without_load.duration.padStart(5, '0')}"></stat-card>
+                        <stat-card label="Moving with Load" value="${this.reportData.breakdown.moving_with_load.duration}"></stat-card>
+                        <stat-card label="Moving without Load" value="${this.reportData.breakdown.moving_without_load.duration}"></stat-card>
+                        <stat-card label="Idle with Load" value="${this.reportData.breakdown.idle_with_load.duration}"></stat-card>
+                        <stat-card label="Idle without Load" value="${this.reportData.breakdown.idle_without_load.duration}"></stat-card>
                     </div>
                 </div>
             </div>
