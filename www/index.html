@@ -73,6 +73,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="report-service.js"></script>
     <script src="date-picker.js"></script>
     <script src="stat-card.js"></script>
     <script src="top-half-doughnut.js"></script>
@@ -114,10 +115,27 @@
             }
         };
 
-        // Initialize with sample data
+        // Handle date changes
         document.addEventListener('DOMContentLoaded', () => {
             const reportComponent = document.querySelector('daily-report');
-            reportComponent.setData(sampleData);
+            const datePickerComponent = document.querySelector('date-picker');
+            
+            // Listen for date changes
+            datePickerComponent.addEventListener('datechange', async (e) => {
+                if (e.detail.date) {
+                    await loadReport(e.detail.date);
+                }
+            });
+            
+            async function loadReport(date) {
+                try {
+                    const data = await reportService.getDailyReport(date);
+                    reportComponent.setData(data);
+                } catch (error) {
+                    console.error('Failed to load report:', error);
+                    reportComponent.setData({ error: true });
+                }
+            }
         });
     </script>
 </body>

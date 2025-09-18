@@ -17,13 +17,29 @@ class DailyReport extends HTMLElement {
         if (!this.reportData) {
             this.innerHTML = `
                 <style>
-                    .no-data {
+                    .message {
                         text-align: center;
                         padding: 2rem;
                         color: #666;
+                        font-size: 1.1rem;
                     }
                 </style>
-                <div class="no-data">No report data available</div>
+                <div class="message">Please select a date to view the daily report</div>
+            `;
+            return;
+        }
+        
+        if (this.reportData.error) {
+            this.innerHTML = `
+                <style>
+                    .message {
+                        text-align: center;
+                        padding: 2rem;
+                        color: #666;
+                        font-size: 1.1rem;
+                    }
+                </style>
+                <div class="message">No data available for the selected date</div>
             `;
             return;
         }

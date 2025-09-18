@@ -12,7 +12,7 @@ class DatePicker extends HTMLElement {
                     font-size: 1rem;
                 }
             </style>
-            <input type="date" value="${new Date().toISOString().split('T')[0]}">
+            <input type="date">
         `;
         
         this.querySelector('input').addEventListener('change', (e) => {
